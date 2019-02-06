@@ -6,7 +6,6 @@ import { LocalUser } from "../models/local_user";
 import { StorageService } from "./storage.service";
 import { JwtHelper } from 'angular2-jwt';
 
-
 @Injectable()
 export class AuthService {
 

@@ -22,6 +22,7 @@ export class HomePage {
     public auth: AuthService) {
 
   }
+
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
   }
@@ -31,12 +32,11 @@ export class HomePage {
   }
 
   login() {
-    this.navCtrl.setRoot('CategoriasPage');
     this.auth.authenticate(this.creds)
       .subscribe(response => {
         this.auth.successfulLogin(response.headers.get('Authorization'));
         this.navCtrl.setRoot('CategoriasPage');
       },
-      error => {});   
+      error => {});    
   }
 }
