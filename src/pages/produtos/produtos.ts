@@ -27,16 +27,20 @@ export class ProdutosPage {
         this.loadImageUrls();
       },
       error => {});
-    }
+  }
 
-    loadImageUrls() {
-      for (var i=0; i<this.items.length; i++) {
-        let item = this.items[i];
-        this.produtoService.getSmallImageFromBucket(item.id)
-          .subscribe(response => {
-            item.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.id}-small.jpg`;
-          },
-          error => {});
-      }
-    }  
+  loadImageUrls() {
+    for (var i=0; i<this.items.length; i++) {
+      let item = this.items[i];
+      this.produtoService.getSmallImageFromBucket(item.id)
+        .subscribe(response => {
+          item.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.id}-small.jpg`;
+        },
+        error => {});
+    }
+  }  
+
+  showDetail() {
+    this.navCtrl.push('ProdutoDetailPage');
+  }
 }
