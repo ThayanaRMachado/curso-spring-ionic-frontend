@@ -56,5 +56,4 @@ export class PickAddressPage {
     this.pedido.enderecoDeEntrega = {id: item.id};
     this.navCtrl.push('PaymentPage', {pedido: this.pedido});
   }
-
 }
